@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.MainPage"   
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             NavigationPage.HasNavigationBar="False"              
+             >
+    <StackLayout x:Name="STKALL" >
+        <StackLayout x:Name="StkSearchbar" BackgroundColor="Purple"  Padding="10" Orientation="Horizontal"  >
+            <ImageButton x:Name="btnBasket" Clicked="btnBasket_Clicked" WidthRequest="45" HeightRequest="45" Source="shoppingcart.png" BackgroundColor="Transparent" />
+            <Label x:Name="LbCount" Text="11" BackgroundColor="Transparent" TextColor="Red" TranslationX="-20" TranslationY="20" WidthRequest="20" FontAttributes="Bold"/>
+            <Frame BackgroundColor="White" Padding="0,1" CornerRadius="10" HorizontalOptions="FillAndExpand" HasShadow="True"  >
+                <SearchBar x:Name="MainSearch" SearchButtonPressed="MainSearch_SearchButtonPressed"  BackgroundColor="Transparent" Placeholder="البحث " HorizontalOptions="FillAndExpand" MinimumHeightRequest="0" MinimumWidthRequest="0" />
+            </Frame>
+        </StackLayout>
+        <ScrollView VerticalScrollBarVisibility="Never" >
+            <StackLayout>
+                <StackLayout x:Name="StkCategores">
+                    <Frame CornerRadius="20" HasShadow="True" Margin="5,0,5,0" HeightRequest="50">
+                        <ScrollView x:Name="Categores" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="0,0,0,0"  HorizontalScrollBarVisibility="Never"  >
+                            <StackLayout  x:Name="stkMain"  HorizontalOptions="CenterAndExpand" Orientation="Horizontal" >
+                                <Grid  >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ImageButton x:Name="BtnFast" Grid.Column="12" WidthRequest="40" HeightRequest="40" Source="fast.png" BackgroundColor="Transparent" Clicked="BtnFast_Clicked" />
+                                    <Label Text="السريع" Grid.Column="12" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Red" VerticalTextAlignment="Center"  />
+                                    <ImageButton x:Name="btnFood"  Clicked="btnFood_Clicked" Grid.Column="11" Grid.Row="0" HorizontalOptions="Center"  Source="grocery.png" BackgroundColor="Transparent" />
+                                    <Label Text="سوبرماركت" Grid.Column="11" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"  />
+                                    <ImageButton x:Name="btnCleans" Clicked="btnCleans_Clicked" Grid.Column="10" Grid.Row="0" HorizontalOptions="Center" Source="cleaning.png" BackgroundColor="Transparent"  />
+                                    <Label Text="المنظفات" Grid.Column="10" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnHouseTools" Clicked="btnHouseTools_Clicked" Grid.Column="9" Grid.Row="0" HorizontalOptions="Center" Source="kitchen.png" BackgroundColor="Transparent"/>
+                                    <Label Text="منزلية"  Grid.Column="9" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnGifts" Clicked="btnGifts_Clicked" Grid.Column="8" Grid.Row="0" HorizontalOptions="Center" Source="giftbox.png" BackgroundColor="Transparent"/>
+                                    <Label Text="هدايا"  Grid.Column="8" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnPharma" Clicked="btnPharma_Clicked" Grid.Column="7" Grid.Row="0" HorizontalOptions="Center" Source="vitamin.png" BackgroundColor="Transparent"/>
+                                    <Label Text="الصيدلية"  Grid.Column="7" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnAccesury" Clicked="btnAccesury_Clicked" Grid.Column="6" Grid.Row="0" HorizontalOptions="Center" Source="transfer.png" BackgroundColor="Transparent" />
+                                    <Label Text="اكسسوارات" Grid.Column="6" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnStationery" Clicked="btnStationery_Clicked" Grid.Column="5" Grid.Row="0" HorizontalOptions="Center" Source="stationery.png" BackgroundColor="Transparent"/>
+                                    <Label Text="قرطاسية"   Grid.Column="5" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnSmokers" Clicked="btnSmokers_Clicked" Grid.Column="4" Grid.Row="0" HorizontalOptions="Center" Source="cigarrete.png" BackgroundColor="Transparent"/>
+                                    <Label Text="المدخنين"  Grid.Column="4" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnClothes" Clicked="btnClothes_Clicked"  Grid.Column="3" Grid.Row="0" HorizontalOptions="Center" Source="fashion.png" BackgroundColor="Transparent"/>
+                                    <Label Text="الملابس"   Grid.Column="3" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center" />
+                                    <ImageButton x:Name="btnPerphiom" Clicked="btnPerphiom_Clicked" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" Source="perfume.png" BackgroundColor="Transparent"/>
+                                    <Label Text="العطورات"  Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnbeauty" Clicked="btnbeauty_Clicked" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" Source="cosmetics.png" BackgroundColor="Transparent"/>
+                                    <Label Text="تجميل" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="btnCar" Clicked="btnCar_Clicked" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" Source="car.png" BackgroundColor="Transparent"/>
+                                    <Label Text="السيارة"  Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" FontSize="Micro" TextColor="Purple" VerticalTextAlignment="Center" />
+                                </Grid>
+                            </StackLayout>
+                        </ScrollView>
+                    </Frame>
+                    <StackLayout>
+                        <CarouselView x:Name="CrsAdver"  HeightRequest="130">
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+                                        <Image Source="{Binding PImage}"  HeightRequest="160" Aspect= "Fill" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </StackLayout>
+                    <StackLayout x:Name="StkLoading" IsVisible="true" HeightRequest="500" >
+                        <ActivityIndicator x:Name="loading" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True" Color="Green" TranslationY="100" HeightRequest="50" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout x:Name="StkCollView"   HeightRequest="500" TranslationY="5"   >
+                        <StackLayout Padding="0,0,0,0">
+                            <CollectionView x:Name="Mycollaction"   ItemsLayout="HorizontalList" >
+                                <CollectionView.Header >
+                                    <Frame HasShadow="True" CornerRadius="15" Padding="2">
+                                        <Label Text="الاكثر رواجاً :" HorizontalTextAlignment="Start" FontAttributes="Bold" TextColor="Purple"/>
+                                    </Frame>
+                                </CollectionView.Header>
+                                <CollectionView.Footer>
+                                    <Frame HasShadow="True" CornerRadius="10" >
+                                        <Label Text="نهاية المنتجات ." HorizontalTextAlignment="Start" FontAttributes="Bold" TextColor="Purple"/>
+                                    </Frame>
+                                </CollectionView.Footer>
+                                <d:CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" />
+                                </d:CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate >
+                                    <DataTemplate >
+                                        <StackLayout Padding="5,0,5,5">
+                                            <Frame HasShadow="True"   CornerRadius="20" >
+                                                <StackLayout>
+                                                    <StackLayout >
+                                                        <ImageButton  Source="{Binding PImage}" HeightRequest="100" WidthRequest="100"  BackgroundColor="Transparent" Clicked="ImageButton_Clicked" />
+                                                    </StackLayout >
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                        <Label Text="{Binding PName }" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                                        <Label Text="ل.س" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                        <Label Text="{Binding PDiscount}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Red"/>
+                                                        <Label Text="{Binding PPrice}" HorizontalTextAlignment="Start" FontSize="Small" TextDecorations="Strikethrough"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Button Text="اضافة الى السلة" BackgroundColor="Green" TextColor="White" CornerRadius="10" FontSize="Micro"  HeightRequest="37" Clicked="Button_Clicked_1" BindingContext="{Binding ProdactID}"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout x:Name="StkNavBar" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  BackgroundColor="Transparent" Padding="0,0,5,5" >
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="BtnNoti" BackgroundColor="BlueViolet" HorizontalOptions="StartAndExpand"  TextColor="White" Text="+ تنبيه" CornerRadius="40" FontSize="Small" IsVisible="false" Clicked="BtnNoti_Clicked" />
+                <Button x:Name="BtnClientR" BackgroundColor="BlueViolet" HorizontalOptions="CenterAndExpand"  TextColor="White" Text="طلبات الزبائن" CornerRadius="40" FontSize="Small" IsVisible="false" Clicked="BtnClientR_Clicked"/>
+                <Button x:Name="BtnAdd" BackgroundColor="BlueViolet" HorizontalOptions="EndAndExpand"  TextColor="White" Text="+ منتج" CornerRadius="40" FontSize="Small" IsVisible="false"  Clicked="BtnAdd_Clicked"/>
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Source="bell.png" />
+                <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecall.png" BackgroundColor="Transparent" />
+                <ImageButton x:Name="btnAbout"  Grid.Column="2" Grid.Row="0"   Source="programmings.png" BackgroundColor="Transparent" Clicked="btnAbout_Clicked" />
+                <ImageButton x:Name="btnHome"  Grid.Column="3" Grid.Row="0"   Source="homexw.png" BackgroundColor="Purple" CornerRadius="40" />
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

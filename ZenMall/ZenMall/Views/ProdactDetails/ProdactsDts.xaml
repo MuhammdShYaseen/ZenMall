@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.ProdactDetails.ProdactsDts"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+       
+        <StackLayout Padding="10">
+            <StackLayout>
+                <ActivityIndicator x:Name="AILoading" Color="Purple" IsRunning="True" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100" HeightRequest="100"  TranslationY="200"/>
+            </StackLayout>
+
+            <ScrollView x:Name="SCLMain">
+                <StackLayout>
+                    <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                <Label Text="تفاصيل المنتج :" FontSize="Medium" TextColor="Purple" />
+            </Frame>
+            <StackLayout>
+                <ImageButton x:Name="imgPimage" WidthRequest="400" HeightRequest="400" BackgroundColor="Transparent"   />
+            </StackLayout>
+            <StackLayout>
+
+                <Grid  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                        
+
+                    </Grid.ColumnDefinitions>
+                    <Label Text="اسم المنتج :" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"/>
+                    <Label x:Name="txtpname" Grid.Row="0" Grid.Column="0"   HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                    
+                    <Label Text="الوصف :" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"/>
+                    <Label x:Name="txtpdis" Grid.Row="1" Grid.Column="0"  HorizontalOptions="End" HorizontalTextAlignment="End"/>
+
+                    <Label Text="الماركة :" Grid.Row="2" Grid.Column="1"  HorizontalTextAlignment="End"/>
+                    <Label x:Name="txtpmarke" Grid.Row="2" Grid.Column="0"  HorizontalOptions="End" HorizontalTextAlignment="End"/>
+
+                    <Label Text="السعر :" Grid.Row="3" Grid.Column="1"  HorizontalTextAlignment="End"/>
+                    <Label x:Name="txtpprice" Grid.Row="3" Grid.Column="0"  HorizontalOptions="End" HorizontalTextAlignment="End" TextDecorations="Strikethrough"/>
+
+                    <Label Text="سعر العرض : " Grid.Row="4" Grid.Column="1"  HorizontalTextAlignment="End"/>
+                    <Label x:Name="txtpdiscunt" Grid.Row="4" Grid.Column="0"  HorizontalOptions="End" HorizontalTextAlignment="End" TextColor="Red"/>
+
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="BtnAddToBasket" Text="اضافة الى السلّة" TextColor="White" BackgroundColor="Green" CornerRadius="15" Clicked="BtnAddToBasket_Clicked"/>
+               
+            </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            
+             
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

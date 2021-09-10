@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.Cpanel.Cpanel"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Label Text="لوحة التحكم:" FontSize="Medium" FontAttributes="Bold" TextColor="DarkBlue"/>
+                
+            </Frame>
+            <StackLayout>
+                <Entry x:Name="txtConnString" Placeholder="Connect String" IsPassword="True" />
+                <Button x:Name="BtnSave" Text="Save" Clicked="BtnSave_Clicked"/>
+            </StackLayout> 
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Notif"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm ="clr-namespace:ZenMall.ViewModels.SQLite" xmlns:d="http://xamarin.com/schemas/2014/forms/design">
+    <ContentPage.BindingContext>
+        <vm:SQLQuery/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10">
+                <Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="btnDelAll" Text="🗑 حذف الكل" BackgroundColor="DarkRed" FontSize="Small" VerticalOptions="Center" TextColor="White" CornerRadius="10" Clicked="btnDelAll_Clicked"/>
+                        <Label Text="الاشعارات :" FontSize="Medium" TextColor="Purple" HorizontalOptions="EndAndExpand"  HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="LblNoNoti" Text="لا يوجد اشعارات" HorizontalOptions="Center" IsVisible="false" FontSize="Medium"/>
+                <ScrollView>
+                    <CollectionView x:Name="NotiColl" ItemsSource="{Binding NotiSource}"  ItemsLayout="HorizontalList" >
+                        <d:CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="1"  VerticalItemSpacing="6" />
+                        </d:CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate >
+                                <StackLayout Padding="5,0,5,5" Orientation="Vertical">
+                                    <Frame HasShadow="True"   CornerRadius="20" >
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout >
+                                                <ImageButton   Source="shoppingcart" HeightRequest="40" WidthRequest="40"  BackgroundColor="Transparent" />
+                                            </StackLayout >
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                <Label Text="{Binding Notititel}" HorizontalTextAlignment="Start" FontSize="Medium" TextColor="Black"/>
+                                                <Label Text="{Binding NotiDiscraption}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Purple" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Purple" CornerRadius="40" Source="bellw.png" />
+                    <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecall.png" BackgroundColor="Transparent" CornerRadius="40" />
+                    <ImageButton x:Name="btnHome" Clicked="btnHome_Clicked" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent"  Source="homex.png"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behavior="clr-namespace:ZenMall"
+             x:Class="ZenMall.Views.Cpanel.AddPrd"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                    <Label Text="اضافة منتوج جديد :" FontSize="Medium" TextColor="Purple" />
+                </Frame>
+                <ScrollView>
+                    <StackLayout>
+                        <Frame HasShadow="True" CornerRadius="10" Padding="5">
+                            <StackLayout>
+                                <Entry x:Name="txtTitel" Placeholder="اسم المنتج"/>
+                                <Entry x:Name="txtSub" Placeholder="وصف المنتج"/>
+                                <Entry x:Name="txtPrice" Placeholder="السعر" Keyboard="Numeric">
+                                    <Entry.Behaviors>
+                                        <behavior:MaskedBehavior Mask="XXXXXXX" />
+                                    </Entry.Behaviors>
+                                </Entry>
+                                <Entry x:Name="txtOfer" Placeholder="سعر العرض" Keyboard="Numeric">
+                                    <Entry.Behaviors>
+                                        <behavior:MaskedBehavior Mask="XXXXXXX" />
+                                    </Entry.Behaviors>
+                                </Entry>
+                                <Entry x:Name="txtMark" Placeholder="الماركة"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <Picker x:Name="PckSaction" Title="القسم الفرعي" HorizontalOptions="FillAndExpand"  />
+                                    <Picker x:Name="PckMainSac" Title="القسم الرئيسي" HorizontalOptions="FillAndExpand"  SelectedIndexChanged="PckMainSac_SelectedIndexChanged"/>
+                                </StackLayout>
+                                <Entry x:Name="txtImgURL" Placeholder="ضع رابط صورة المنتج هنا"/>
+                                <Button x:Name="BtnAdd" BackgroundColor="Green" TextColor="White" Text="اضافة +" CornerRadius="5" Clicked="BtnAdd_Clicked"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

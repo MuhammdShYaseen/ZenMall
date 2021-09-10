@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behavior="clr-namespace:ZenMall"
+             x:Class="ZenMall.Basket"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:vm ="clr-namespace:ZenMall.ViewModels.SQLite"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:SQLQuery/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout >
+            <ScrollView x:Name="SCRbasket">
+                <StackLayout x:Name ="stkMain">
+                    <StackLayout Orientation="Vertical" >
+                        <Frame  CornerRadius="14" HeightRequest="40">
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="btnShowHide"  Text="➖" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" FontSize="Small" VerticalOptions="Center" Clicked="btnShowHide_Clicked" CornerRadius="10" />
+                                <Label x:Name="LblInfo"  Text="معلومات توصيل الطلبات:" TextColor="Purple" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout x:Name="StkInfo">
+                            <Entry x:Name="txtName" Placeholder="ادخل اسمك" />
+                            <Entry x:Name="txtAdress" Placeholder="ادخل عنوانك" />
+                            <Entry x:Name="txtPhone" Placeholder="ادخل رقم هاتفك" Keyboard="Numeric" HorizontalTextAlignment="Start">
+                                <Entry.Behaviors>
+                                    <behavior:MaskedBehavior Mask="XXXX XXX XXX" />
+                                </Entry.Behaviors>
+                            </Entry>
+                            
+                            <Button x:Name="btnLocation" Text="حدد موقعك على الخريطة" Clicked="btnLocation_Clicked" CornerRadius="10" BackgroundColor="Goldenrod" TextColor="White"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <Label x:Name="lblLatitude" Text="XX" HorizontalOptions="End" TextColor="Green"/>
+                                <Label x:Name="lblLongtude" Text="XX" HorizontalOptions="End" TextColor="green"/>
+                            </StackLayout>
+                            <Button x:Name="BtnSave" Text="حفظ بيانات التوصيل" BackgroundColor="Green" TextColor="White" Clicked="BtnSave_Clicked" CornerRadius="10"/>
+                        </StackLayout>
+                        <Frame>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout  VerticalOptions="Center">
+                                    <Button BackgroundColor="DarkRed" TextColor="White" Text="تفريغ السلة 🗑" CornerRadius="10" Clicked="Button_Clicked_2"/>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="EndAndExpand" >
+                                    <Label Text="محتويات السلة:" TextColor="Purple" FontSize="Medium"/>
+                                    <Label x:Name="LblTotal" Text=" مجموع الفاتورة : " TextColor="White" BackgroundColor="Green" HorizontalOptions="End"/>
+                                    <Label Text="+ أجور التوصيل" TextColor="Green"  FontAttributes="Italic"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout >
+                        <CollectionView x:Name="BasketColl" ItemsSource="{Binding BasketSource}"  ItemsLayout="HorizontalList" >
+                            <d:CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" />
+                            </d:CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate >
+                                <DataTemplate >
+                                    <StackLayout Padding="5,0,5,5">
+                                        <Frame HasShadow="True"   CornerRadius="20" >
+                                            <StackLayout>
+                                                <StackLayout >
+                                                    <ImageButton   Source="{Binding Pimage}" HeightRequest="100" WidthRequest="100"  BackgroundColor="Transparent" />
+                                                </StackLayout >
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                    <Label Text="{Binding ProdactName }" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                                    <Label Text="ل.س" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                    <Label Text="{Binding Prise}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Red"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                                    <Label Text="{Binding NumberOfProdacts}" VerticalTextAlignment="Center" FontSize="Small" TextColor="DeepSkyBlue" />
+                                                    <Label Text="الكمية :"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                    <Label Text="ل.س"/>
+                                                    <Label Text="{Binding TotalPrice}" TextColor="Red"/>
+                                                    <Label Text="اجمالي :"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Button Text="تعديل الكمية" TextColor="White" BackgroundColor="DeepSkyBlue" BindingContext="{Binding ID}" HeightRequest="40"  FontSize="Small" Clicked="Button_Clicked" CornerRadius="10"  />
+                                                    <Button Text="ازالة من السلة" BackgroundColor="DarkGray" TextColor="White" CornerRadius="10"  BindingContext="{Binding ID}" HeightRequest="40" Clicked="Button_Clicked_1"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="10" >
+                <Button x:Name="btnRec" Text="اضغط هنا لتأكيد الطلب" CornerRadius="20" BackgroundColor="Purple" TextColor="White" Clicked="btnRec_Clicked"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Source="bell.png" />
+                    <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecall.png"  BackgroundColor="Transparent" />
+                    <ImageButton x:Name="btnHome" Clicked="btnHome_Clicked" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent"  Source="homex.png"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behavior="clr-namespace:ZenMall"
+             x:Class="ZenMall.Views.ProdactDetails.ProdactsDetailTry"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout>
+                <ActivityIndicator x:Name="AILoading" Color="Purple" IsRunning="True" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100" HeightRequest="100"  TranslationY="200"/>
+            </StackLayout>
+            <ScrollView x:Name="SCLMain">
+                <StackLayout x:Name="StkMainPDet">
+                    <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                        <Label Text="تفاصيل المنتج :" FontSize="Medium" TextColor="Purple" />
+                    </Frame>
+                    <StackLayout>
+                        <Image x:Name="imgPimage" WidthRequest="400" HeightRequest="400" BackgroundColor="Transparent"   />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Entry x:Name="txtpname" HorizontalOptions="FillAndExpand" />
+                            <Label Text="اسم المنتج :" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Entry x:Name="txtpdiss" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="الوصف :" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="txtpmarke" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="الماركة :" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="txtppricee" HorizontalOptions="FillAndExpand" Keyboard="Numeric">
+                                <Entry.Behaviors>
+                                    <behavior:MaskedBehavior Mask="XXXXXXX" />
+                                </Entry.Behaviors>
+                            </Entry>
+                            <Label Text="السعر :"  VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="txtpdiscuntt" HorizontalOptions="FillAndExpand" Keyboard="Numeric">
+                                <Entry.Behaviors>
+                                    <behavior:MaskedBehavior Mask="XXXXXXX" />
+                                </Entry.Behaviors>
+                            </Entry>
+                            <Label Text="سعر العرض : " VerticalTextAlignment="Center" TextColor="Red"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Picker x:Name="PckSaction" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="القسم الفرعي" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="txtImgUrl" HorizontalOptions="FillAndExpand" IsVisible="false"/>
+                            <Label x:Name="LblImgUrl" Text="رابط الصورة :" VerticalTextAlignment="Center" IsVisible="false"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button x:Name="BtnSave" Text="حفظ التعديلات" TextColor="White" BackgroundColor="DeepSkyBlue"  Clicked="BtnSave_Clicked" IsVisible="false"/>
+                        <Button x:Name="BtnDelete" Text="حذف المنتج" BackgroundColor="DarkRed" TextColor="White" Clicked="BtnDelete_Clicked" IsVisible="false"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Button x:Name="BtnAddToBasket" Text="اضافة الى السلّة" TextColor="White" BackgroundColor="Green" CornerRadius="15" Clicked="BtnAddToBasket_Clicked" IsVisible="false"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

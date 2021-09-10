@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="ZenMall.Views.Cpanel.ClientRecuests"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                <Label Text="طلبات الزبائن :" FontSize="Medium" TextColor="Purple" />
+            </Frame>
+            <StackLayout>
+                <ScrollView>
+                    <CollectionView x:Name="CollClients"  ItemsLayout="HorizontalList" >
+                        <d:CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="1"  VerticalItemSpacing="6" />
+                        </d:CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate >
+                                <StackLayout Padding="5,0,5,5" Orientation="Vertical">
+                                    <Frame HasShadow="True"   CornerRadius="20" >
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout >
+                                                <Button x:Name="BtnClientDets" BindingContext="{Binding RecuestID}" Text="تفاصيل"  BackgroundColor="Purple" TextColor="White" FontSize="Small" CornerRadius="15" Clicked="BtnClientDets_Clicked" />
+                                                <Button x:Name="BtnDelete" BindingContext="{Binding RecuestID}" Text="حذف الطلب" BackgroundColor="Red" TextColor="White" FontSize="Small" CornerRadius="15" Clicked="BtnDelete_Clicked"/>
+                                            </StackLayout >
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                <Label Text="{Binding FullName}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Black"/>
+                                                <Label Text="{Binding Adress}" HorizontalTextAlignment="Start" FontSize="Micro" TextColor="DarkGray" />
+                                                <Button x:Name="BtnCWhasApp" Text="{Binding PhoneNumber}" FontSize="Micro" TextColor="White" BackgroundColor="Green" Clicked="BtnCWhasApp_Clicked" />
+                                                <Label Text="{Binding RecDateTime}" HorizontalTextAlignment="Start" FontSize="Micro" TextColor="DarkGray" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

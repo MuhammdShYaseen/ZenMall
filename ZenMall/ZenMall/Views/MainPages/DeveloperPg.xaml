@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.MainPages.DeveloperPg"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Frame >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Label Text="حول التطبيق :" FontSize="Title" TextColor="Purple" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                </Frame>
+                <ScrollView>
+                    <Frame Padding="5" HasShadow="True" CornerRadius="10">
+                        <StackLayout HorizontalOptions="End">
+                            <Label Text="Zain Mall"  TextColor="Purple" FontSize="Title" HorizontalTextAlignment="Center"/>
+                            <Label Text="تطبيق زين مول السوق الالكتروني الشامل"  TextColor="BlueViolet" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="- يقدم لك هذا التطبيق خدمة شراء المنتجات المتنوعة و توصيلها اليك اينما كنت."  TextColor="BlueViolet"/>
+                            <Label Text="- ان الاسعار المعروضة لمنتجاتنا هي اسعار واقعية بعيدة كل البعد عن الغبن و الاحتكار."  TextColor="BlueViolet"/>
+                            <Label Text="- لدينا فريق عمل متكامل لتأمين خدمة لائقة و مرضية للجميع."  TextColor="BlueViolet"/>
+                            <Label Text="- يستخدم التطبيق احدث التقنيات لتسهيل عملية الشراء و التوصيل دون الحاجة الى التسجيل في البرنامج او مشاركة اي معلومات."  TextColor="BlueViolet"/>
+                            <Label Text="- يوجد في البرنامج خيار تحديد الموقع و ذلك لتوفير عناء كتابة عنوانك و توصيل طلبك بكفائة عالية و هو *اختياري* لكن نوصي *باستخدامه*."  TextColor="BlueViolet"/>
+                            <Label Text="- واجهة التطبيق في غاية البساطة و سهلة التعامل في حال وجود اي ملاحظات نسعد جدا بتواصلكم مع قسم العناية بالزبائن"  TextColor="BlueViolet"/>
+                            <Label Text="- ان هذا التطبيق مرخص لممارسة نشاط التجارة الالكترونية ضمن الجمهورية العربية السورية وفق احكام القانون لصالح زين ابراهيم الحسن سجل تجاري رقم: 94605"  TextColor="BlueViolet"/>
+                            <Button Text="دليل المستخدم" TextColor="Blue" BackgroundColor="Transparent" Clicked="Button_Clicked" />
+                            <Label Text="- تم تطوير التطبيق من قبل :"  TextColor="Black"/>
+                            <Frame HasShadow="True">
+                                <StackLayout>
+                                    <Label Text="Muhammad Yaseen"  TextColor="Black"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="WhatsApp :" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center"/>
+                                        <Button x:Name="BtnDevWhatsApp"  Text="00963 958 404 199" TextColor="White" BackgroundColor="Green" CornerRadius="10" Clicked="BtnDevWhatsApp_Clicked" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </ScrollView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="ZenMall.Views.MainPages.FastMarket" 
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout >
+                <Frame HasShadow="True" CornerRadius="10" BackgroundColor="Purple">
+                    <StackLayout BackgroundColor="Purple"  Padding="10" Orientation="Horizontal">
+                        
+                        <ImageButton x:Name="btnBasket" Clicked="btnBasket_Clicked" WidthRequest="45" HeightRequest="45" Source="shoppingcart.png" BackgroundColor="Transparent"  HorizontalOptions="StartAndExpand"/>
+                        <Label x:Name="LbCount" Text="0" BackgroundColor="Transparent" TextColor="Red" TranslationX="-70" TranslationY="20"  FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
+                        <Label TextColor="White" FontSize="Medium" Text="التسوق السريع :" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="10">
+                    <StackLayout>
+                        <SearchBar x:Name="SrchFast" Placeholder="اكتب اسم المادة هنا ." TextColor="Black" FontSize="Medium" TextChanged="SrchFast_TextChanged"/>
+                        <Button x:Name="btntoBasket" Text="اضافة الى السلة" BackgroundColor="Green" TextColor="White" CornerRadius="30" Clicked="btntoBasket_Clicked" IsEnabled="False"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <ActivityIndicator x:Name="loading" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True" Color="Green" IsVisible="False" />
+                    <CollectionView x:Name="CollSearch"  ItemsLayout="HorizontalList" >
+                        <d:CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" />
+                        </d:CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate >
+                                <StackLayout Padding="5,0,5,5">
+                                    <Frame HasShadow="True"   CornerRadius="20" >
+                                        <StackLayout>
+                                            <StackLayout >
+                                                <ImageButton  Source="{Binding PImage}" HeightRequest="100" WidthRequest="100"  BackgroundColor="Transparent" Clicked="ImageButton_Clicked" />
+                                            </StackLayout >
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                <Label Text="{Binding PName }" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                                <Label Text="ل.س" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                <Label Text="{Binding PDiscount}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Red"/>
+                                                <Label Text="{Binding PPrice}" HorizontalTextAlignment="Start" FontSize="Small" TextDecorations="Strikethrough"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical">
+                                                <Button Text="اضافة الى السلة" BackgroundColor="Green" TextColor="White" CornerRadius="10" FontSize="Micro"  HeightRequest="37" Clicked="Button_Clicked"  BindingContext="{Binding ProdactID}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

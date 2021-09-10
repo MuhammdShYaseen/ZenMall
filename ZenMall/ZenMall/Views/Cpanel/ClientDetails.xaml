@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="ZenMall.Views.Cpanel.ClientDetails"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Frame HasShadow="True" CornerRadius="10">
+                <Label Text="تفاصيل طلب الزبون.." TextColor="Purple" FontSize="Medium"/>
+            </Frame>
+            <ScrollView>
+                <StackLayout>
+                    <Frame>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" >
+                                <Entry x:Name="txtCname" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="اسم الزبون :" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Entry x:Name="txtCAdress" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="عنوان الزبون :" VerticalTextAlignment="Center"/>
+                            </StackLayout >
+                            <StackLayout Orientation="Horizontal" >
+                                <Entry x:Name="txtCPhone" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="هاتف الزبون :" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                            <Button x:Name="BtnDisplayLocation" Clicked="BtnDisplayLocation_Clicked" Text="عرض موقع الزبون على الخريطة" BackgroundColor="Green" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True" CornerRadius="10">
+                        <Label Text="المنتوجات المطلوبة :" TextColor="Purple" FontSize="Medium"/>
+                    </Frame>
+                    <StackLayout>
+                        <ScrollView>
+                            <CollectionView x:Name="CollClients"  ItemsLayout="HorizontalList" >
+                                <d:CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="1"  VerticalItemSpacing="6" />
+                                </d:CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate >
+                                    <DataTemplate >
+                                        <StackLayout Padding="5,0,5,5" Orientation="Vertical">
+                                            <Frame HasShadow="True"   CornerRadius="20" >
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout >
+                                                        <Image x:Name="ImgProdact" Source="{Binding Pimage}"  WidthRequest="50" HeightRequest="50"  BackgroundColor="Transparent"   />
+                                                    </StackLayout >
+                                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                            <Label Text="{Binding ProdactName }" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                                            <Label Text="ل.س" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                            <Label Text="{Binding Prise}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Red"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                                            <Label Text="{Binding NumberOfProdacts}" VerticalTextAlignment="Center" FontSize="Small" TextColor="DeepSkyBlue" />
+                                                            <Label Text="الكمية :"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                            <Label Text="ل.س"/>
+                                                            <Label Text="{Binding TotalPrice}" TextColor="Red"/>
+                                                            <Label Text="اجمالي :"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                    </StackLayout>
+                    <ScrollView/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

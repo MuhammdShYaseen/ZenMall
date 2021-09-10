@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.MainPages.CallUs"
+             NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand" Padding="10">
+                <ImageButton x:Name="btnBach"  Clicked="btnBach_Clicked"  Source="right.png" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50"/>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image Source="customersupport.png" HorizontalOptions="Start" VerticalOptions="FillAndExpand" TranslationX="-10" />
+                    <Label Text="نحن في خدمتك!" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="للاستفسار و الشكوى " FontSize="Default" HorizontalOptions="Center"/>
+                    <Label Text="تواصل معنا " FontSize="Default" HorizontalOptions="Center"/>
+                    <Button x:Name="BtnHelp" Text="اضغط هنا للتحدث مع خدمة الزبائن" Padding="10" FontSize="Medium" CornerRadius="35" Clicked="BtnHelp_Clicked" TextColor="Black" />
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Source="bell.png" />
+                    <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecallw.png" BackgroundColor="Purple" CornerRadius="40" />
+                    <ImageButton x:Name="btnHome" Clicked="btnHome_Clicked" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent"  Source="homex.png"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

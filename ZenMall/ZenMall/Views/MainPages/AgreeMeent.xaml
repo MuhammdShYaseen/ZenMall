@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.MainPages.AgreeMeent"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <Label Text="سياسة استخدام التطبيق :" FontSize="Title" TextColor="Purple" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+                <Frame Padding="5" HasShadow="True" CornerRadius="10">
+                    <StackLayout HorizontalOptions="End">
+                        <Label Text="Zain Mall"  TextColor="Purple" FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Label Text="مرحبا بك في تطبيق زين مول "  TextColor="BlueViolet" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="نُبذة عن التطبيق و توصيف عمله :"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="- يعد هذا التطبيق منصة للتجارة الإلكترونية و توصيل الطلبات التي تتيح للمستخدمين من الأفراد شراء مجموعة متنوعة من المنتجات و الخدمات و توصيلها الى منازلهم وفق الاسعار الحقيقية دون اي غبن او احتكار.
+نحتفظ بحق تقديم خدمات جديدة وتحديث أي من الخدمات أو سحبها، وفقاً لتقديرنا الخاص دون اية مسؤولية."  TextColor="BlueViolet"/>
+                        <Label Text="الجهة المسؤولة عن التطبيق:"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="ان هذا التطبيق مرخص لممارسة التجارة الالكترونية ضمن  الجمهورية العربية السورية وفق احكام القانون لصالح زين ابراهيم الحسن سجل تجاري رقم 94605"  TextColor="BlueViolet"/>
+                        <Label Text="الفئات المستهدفة:"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="اي فرد تتوفر فيه معايير الاهلية المذكورة في شروط الاستخدام المتعلقة بالعمر و الاقامة "  TextColor="BlueViolet"/>
+                        <Label Text="الافراد و الاسر ممن يرغبون بالتسوق عبر الانترنت و شراء حاجياتهم اليومية و توصيلها الى منازلهم دون تكلف عناء التسوق في الاسواق "  TextColor="BlueViolet"/>
+                        <Label Text="توصيف عمل التطبيق:"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="يقدم هذا التطبيق خدمات التسوق الاكتروني لكافة المنتجات التي يحتاجهاالافراد بشكل يومي كالخضروات و الفوكة و البقالة و الملابس و اشياء اخرى موجودة ضمن الاقسام المتنوعة داخل التطبيق و توصيل الطلبات الى المنازل  "  TextColor="BlueViolet"/>
+                        <Button x:Name="BtnMenu" Text="راجع دليل الاستخدام بالضغط هنا "  TextColor="Blue" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" FontAttributes="Bold" Clicked="BtnMenu_Clicked" />
+                        <Label Text="حقوق مؤسسة زين مول التجارية وواجباتها :"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="1- تلتزم مؤسسة زين مول بتقديم خدمة بيع المنتوجات عبر الانترنت ضمن تطبيق زين مول و ذلك حسب الاسعار الحقيقة الصادرة عن وزارة التجارة الداخلية و حماية المستهلك " TextColor="BlueViolet"/>
+                        <Label Text="2- تلتزم المؤسسة بتقديم خدمة توصيل الطلبات الى المستخدمين وفق الامكانيات باسرع الطرق المتاحة "  TextColor="BlueViolet"/>
+                        <Label Text="3- لا نتحمّل مسؤولية تأخر توصيل الطلبات الى الزبائن في حال وجود ضغط عمل او ظروف اخرى خارجة عن ارادة المؤسسة و يتم اعلام المستخدم بذلك في حال حدوثه "  TextColor="BlueViolet"/>
+                        <Label Text="4- يحق للمؤسسة اضافة خدمات جديدة او الغاء خدمات موجودة فعلا دون اية مسؤولية "  TextColor="BlueViolet"/>
+                        <Label Text="5- من حق المؤسسة تحصيل نسبة من الارباح على المنتجات المعروضة ضمن التطبيق وفق القوانين و الانظمة. "   TextColor="BlueViolet"/>
+                        <Label Text="6- من حق المؤسسة تقاض مبالغ مالية اضافية كأجر توصيل الطلبات "  TextColor="BlueViolet"/>
+                        <Label Text="7- من حق المؤسسةالغاء اي طلب او عملية شراء للمستخدم في حال عدم جديّة المستخدم دون مسؤولية "  TextColor="BlueViolet"/>
+                        <Label Text="شروط استخدام التطبيق و حقوق المستخدم :"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="يحق لك استخدام التطبيق والاستفادة من الخدمات إذا توفرت لديك معايير الاهلية التالية:"  TextColor="BlueViolet"/>
+                        <Label Text="أن تكون بالغاً السن القانونية لتتمكن من شراء المنتجات في مكان إقامتك."  TextColor="BlueViolet"/>
+                        <Label Text="أن تكون قادراً على تقديم عنوان في الجمهورية العربية السورية لتسليم المنتجات."  TextColor="BlueViolet"/>
+                        <Label Text="اليات الحماية و الخصوصية :"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="لا يتطلب التطبيق التسجيل او الافصاح عن اي معلومات خاصة الا عند ارسال طلب شراء منتجات او توصيل الطلبات وهي:"  TextColor="BlueViolet"/>
+                        <Label Text="1- اسم المشتري"  TextColor="BlueViolet"/>
+                        <Label Text="2- العنوان بالتفصيل لتوصيل الطلبات."  TextColor="BlueViolet"/>
+                        <Label Text="3- رقم الهاتف للتواصل مع المشتري و التأكد من حسن سير العمل و تلق الخدمة المناسبة."  TextColor="BlueViolet"/>
+                        <Label Text="4- الموقع على الخريطة GPS في حال رغب المستخدم بتحديد موقعه على الخريطة لتوفير عناء كتابة العنوان و هو امر اختياري و ليس الزاميا ."  TextColor="BlueViolet"/>
+                        <Label Text="يتم حفظ هذه المعلومات على قاعدة البيانات الخاصة بنا لمدة لا تتجاوز الثلاثة ايام و لن تستخدم اي من البيانات المذكورة اعلاه الا لتقديم خدمات توصيل الطلبات."  TextColor="BlueViolet"/>
+                        <Label Text="في حال مخالفة شروط استخدام التطبيق:"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="سيتم اهمال الطلبات المقدمة من المستخدم المخالف للشروط."  TextColor="BlueViolet"/>
+                        <Label Text="تعديل سياسة الاستخدام:"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="في حال وجود اي تعديلات على سياسة الاستخدام سنقوم باعلام المستخدمين للموافقة عليها."  TextColor="BlueViolet"/>
+                        <Label Text="ملاحظات هامة وجب التنويه عليها :"  TextColor="BlueViolet" FontAttributes="Bold"/>
+                        <Label Text="ضمن اقسام التطبيق هناك قسم الصيدلية الغاية من هذا القسم هو توصيل و شراء الادوية من الصيدليات المناوبة و توصيلها الى المستخدم فقط و ولا نقوم ببيع او التجارة بهذه المواد
+و نتعهد باحضار فاتورة بالمواد المطلوبة من الصيدلية المناوبة الى المستخدم عند التسليم."  TextColor="BlueViolet"/>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+            <Frame HasShadow="True" CornerRadius="15">
+                <StackLayout>
+                    <Label Text="هل توافق على سياسة استخدام تطبيق زين مول ؟"  TextColor="Black"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="BtnAgree" Text="موافق" TextColor="White" FontSize="Small"  BackgroundColor="Green" Clicked="BtnAgree_Clicked" CornerRadius="10"/>
+                        <Button x:Name="BtnDisAgree" Text="غير موافق" TextColor="White" BackgroundColor="Red" CornerRadius="10" Clicked="BtnDisAgree_Clicked" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

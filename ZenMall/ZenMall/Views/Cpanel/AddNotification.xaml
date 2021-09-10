@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.Cpanel.AddNotification"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                <Label Text="ارسال تنبيه لمستخدمين التطبيق :" FontSize="Medium" TextColor="Purple" />
+            </Frame>
+            <StackLayout>
+                <Frame HasShadow="True" CornerRadius="10" Padding="5">
+                    <StackLayout>
+                        <Entry x:Name="txtTitel" Placeholder="عنوان التنبيه"/>
+                        <Entry x:Name="txtSub" Placeholder="محتوى التنبيه"/>
+                        <Button x:Name="BtnSend" BackgroundColor="Green" TextColor="White" Text="ارسال التنبيه" CornerRadius="5" Clicked="BtnSend_Clicked"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behavior="clr-namespace:ZenMall"
+             x:Class="ZenMall.Views.ProdactDetails.EditCounties"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout>
+                <ActivityIndicator x:Name="AILoading" Color="Purple" IsRunning="True" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100" HeightRequest="100" />
+            </StackLayout>
+            <ScrollView x:Name="SCLMain">
+                <StackLayout>
+                    <Frame Padding="10" CornerRadius="20" HasShadow="True">
+                        <Label Text="تعديل الكمية :" FontSize="Medium" TextColor="Purple" />
+                    </Frame>
+                    <StackLayout>
+                        <ImageButton x:Name="imgPimage" WidthRequest="300" HeightRequest="300" BackgroundColor="Transparent"   />
+                    </StackLayout>
+                    <StackLayout Padding="5">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label x:Name="txtpname"  HorizontalOptions="FillAndExpand"  />
+                            <Label Text="اسم المنتج :" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label x:Name="txtpprice"   TextColor="Red"  HorizontalOptions="EndAndExpand" />
+                            <Label Text="السعر :" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout>
+                                <Button x:Name="BtnIncrace" Text="➕" BackgroundColor="Transparent" Clicked="BtnIncrace_Clicked"/>
+                                <Button x:Name="BtnDiscrace" Text="➖" BackgroundColor="Transparent" Clicked="BtnDiscrace_Clicked"/>
+                            </StackLayout>
+                            <Label x:Name="txtcount" TextColor="DeepSkyBlue" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  FontSize="Medium"  HorizontalOptions="FillAndExpand"/>
+                            <Label Text="الكمية : " VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Text="حفظ التعديلات" TextColor="White" BackgroundColor="Green" CornerRadius="15" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

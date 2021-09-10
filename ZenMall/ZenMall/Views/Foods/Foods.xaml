@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="ZenMall.Views.Foods.Foods"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout >
+                <StackLayout BackgroundColor="Purple"  Padding="10" Orientation="Horizontal" >
+                    <ImageButton x:Name="btnBasket" Clicked="btnBasket_Clicked" WidthRequest="50" HeightRequest="40" Source="shoppingcart.png" BackgroundColor="Transparent"/>
+                    <Label x:Name="LbCount" Text="" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Red" TranslationX="-20" TranslationY="20" WidthRequest="20"/>
+                    <Frame BackgroundColor="White" Padding="0,1" CornerRadius="10" HorizontalOptions="FillAndExpand" HasShadow="True"  >
+                        <SearchBar x:Name="MainSearch"  BackgroundColor="Transparent" Placeholder="البحث " HorizontalOptions="FillAndExpand" MinimumHeightRequest="0" MinimumWidthRequest="0" SearchButtonPressed="MainSearch_SearchButtonPressed" />
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Padding="0" >
+                        <Frame HasShadow="True" >
+                            <Label Text="الغذائيات / اقسام فرعية" TextColor="DarkBlue"/>
+                        </Frame>
+                    </StackLayout>
+                    <ScrollView HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Padding="8">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="End">
+                                <Button x:Name="btndaily" Text="مستلزمات يومية" CornerRadius="40" BackgroundColor="#943194" TextColor="White" FontSize="Micro" Clicked="btndaily_Clicked" />
+                                <Button x:Name="btnMeat" Text="لحومات" CornerRadius="40" BackgroundColor="Purple" TextColor="White" FontSize="Micro" Clicked="btnMeat_Clicked" />
+                                <Button x:Name="btnChicken" Text="دجاج" CornerRadius="40" BackgroundColor="Purple" TextColor="White" FontSize="Micro" Clicked="btnChicken_Clicked" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="End">
+                                <Button x:Name="btnVeg" Text="خضار و فواكة" CornerRadius="40" BackgroundColor="#BB2CBB" TextColor="White" FontSize="Micro" Clicked="btnVeg_Clicked"/>
+                                <Button x:Name="btnBaking" Text="مخبوزات" CornerRadius="40" BackgroundColor="#A707A7" TextColor="White" FontSize="Micro" Clicked="btnBaking_Clicked"/>
+                                <Button x:Name="btnCheese" Text="البان و اجبان" CornerRadius="40" BackgroundColor="Purple" TextColor="White" FontSize="Micro" Clicked="btnCheese_Clicked"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="End">
+                                <Button x:Name="btnDrinks" Text="مشروبات باردة" CornerRadius="40" BackgroundColor="#BA06BA" TextColor="White" FontSize="Micro" Clicked="btnDrinks_Clicked"/>
+                                <Button x:Name="btnSweets" Text="حلويات" CornerRadius="40" BackgroundColor="#8F0A8F" TextColor="White" FontSize="Micro" Clicked="btnSweets_Clicked"/>
+                                <Button x:Name="btnCanned" Text="معلبات" CornerRadius="40" BackgroundColor="#790F79" TextColor="White" FontSize="Micro" Clicked="btnCanned_Clicked"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="End">
+                                <Button x:Name="btnFrozen" Text="مفرّزات" CornerRadius="40" BackgroundColor="#700370" TextColor="White" FontSize="Micro" Clicked="btnFrozen_Clicked"/>
+                                <Button x:Name="btnGrain" Text="حبوب و رز" CornerRadius="40" BackgroundColor="#B00AB0" TextColor="White" FontSize="Micro" Clicked="btnGrain_Clicked"/>
+                                <Button x:Name="btnharbls" Text="توابل و اعشاب" CornerRadius="40" BackgroundColor="#B00AB0" TextColor="White" FontSize="Micro" Clicked="btnharbls_Clicked"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="End">
+                                <Button x:Name="btnCleanics" Text="محارم و فوط" CornerRadius="40" BackgroundColor="#700370" TextColor="White" FontSize="Micro" Clicked="btnCleanics_Clicked"/>
+                                <Button x:Name="btnCrackers" Text="نقرشات" CornerRadius="40" BackgroundColor="Purple" TextColor="White" FontSize="Micro" Clicked="btnCrackers_Clicked"/>
+                                <Button x:Name="BtnAll" Text="عرض الكل" CornerRadius="40" BackgroundColor="Purple" TextColor="White" FontSize="Micro" Clicked="BtnAll_Clicked"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout Padding="5">
+                        <Frame HasShadow="True">
+                            <Label  x:Name="Lblsection" Text="الكل :" TextColor="DarkBlue" FontSize="Default"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout>
+                        <ActivityIndicator x:Name="loading" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True" Color="Green" WidthRequest="100"/>
+                        <CollectionView x:Name="CollFoods"  ItemsLayout="HorizontalList" >
+                            <d:CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="6" />
+                            </d:CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate >
+                                <DataTemplate >
+                                    <StackLayout Padding="5,0,5,5">
+                                        <Frame HasShadow="True"   CornerRadius="20" >
+                                            <StackLayout>
+                                                <StackLayout >
+                                                    <ImageButton Clicked="ImageButton_Clicked"  Source="{Binding PImage}" HeightRequest="100" WidthRequest="100"  BackgroundColor="Transparent" />
+                                                </StackLayout >
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                    <Label Text="{Binding PName }" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                                    <Label Text="ل.س" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                                                    <Label Text="{Binding PDiscount}" HorizontalTextAlignment="Start" FontSize="Small" TextColor="Red"/>
+                                                    <Label Text="{Binding PPrice}" HorizontalTextAlignment="Start" FontSize="Small" TextDecorations="Strikethrough"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Button Text="اضافة الى السلة" BackgroundColor="Green" TextColor="White" CornerRadius="10" FontSize="Micro"  HeightRequest="37"  BindingContext="{Binding ProdactID}" Clicked="Button_Clicked_2"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="5" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Source="bell.png" />
+                    <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecall.png" BackgroundColor="Transparent" />
+                    <ImageButton x:Name="btnHome" Clicked="btnHome_Clicked" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent"  Source="homex.png"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

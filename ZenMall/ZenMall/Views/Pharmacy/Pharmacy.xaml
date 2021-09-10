@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenMall.Views.Pharmacy.Pharmacy"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout >
+                <StackLayout BackgroundColor="Purple"  Padding="10" Orientation="Horizontal" >
+                    <ImageButton x:Name="btnBasket" Clicked="btnBasket_Clicked" WidthRequest="50" HeightRequest="40" Source="shoppingcart.png" BackgroundColor="Transparent"/>
+                    <Label x:Name="LbCount" Text="" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Red" TranslationX="-20" TranslationY="20" WidthRequest="20"/>
+                    <Frame BackgroundColor="White" Padding="0,1" CornerRadius="10" HorizontalOptions="FillAndExpand" HasShadow="True"  >
+                        <SearchBar x:Name="MainSearch"  BackgroundColor="Transparent" Placeholder="البحث " HorizontalOptions="FillAndExpand" MinimumHeightRequest="0" MinimumWidthRequest="0" SearchButtonPressed="MainSearch_SearchButtonPressed" />
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Padding="0" >
+                        <Frame HasShadow="True" >
+                            <Label Text="الصيدلية /  " TextColor="DarkBlue"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Padding="10">
+                        <Entry x:Name="txtMName" Placeholder="اكتب اسم المادة هنا ثم اضغط اضافة"/>
+                        <Button x:Name="btntoBasket" Text="اضافة الى السلة" BackgroundColor="Green" TextColor="White" CornerRadius="30" Clicked="btntoBasket_Clicked"/>
+                        <Label Text="أو" HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="Purple" FontSize="Medium"/>
+                        <Button x:Name="BtnCUs" Text="اضغط هنا للتحدث مع خدمة الزبائن" Padding="10" FontSize="Medium" CornerRadius="30" Clicked="BtnCUs_Clicked" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Padding="5" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="btnNontif"  Clicked="btnNontif_Clicked" Grid.Column="0" Grid.Row="0"  BackgroundColor="Transparent" Source="bell.png" />
+                    <ImageButton x:Name="btnCallus"    Clicked="btnCallus_Clicked" Grid.Column="1" Grid.Row="0" Source="phonecall.png" BackgroundColor="Transparent" />
+                    <ImageButton x:Name="btnHome" Clicked="btnHome_Clicked" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent"  Source="homex.png"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
